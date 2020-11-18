@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.styles.scss';
-import {ReactComponent as Logo} from '../../assets/crown.svg'
+import { ReactComponent as Logo } from '../../assets/crown.svg'
 
 const Header = ({ id, name, price, imageUrl }) => (
     <div className="header">
@@ -11,6 +11,8 @@ const Header = ({ id, name, price, imageUrl }) => (
         <div className="options">
             <Link className="option" to="/shop">SHOP</Link>
             <Link className="option" to="/shop">CONTACT</Link>
+            <Link className="option" to="/signin">SIGN IN</Link>
+
         </div>
     </div>
 );
