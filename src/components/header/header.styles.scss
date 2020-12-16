@@ -18,9 +18,11 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-  
       .option {
+        color: black;
+        text-decoration: none;
         padding: 10px 15px;
+        cursor: pointer;
       }
     }
   }
