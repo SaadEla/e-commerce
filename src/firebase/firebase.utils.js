@@ -2,6 +2,9 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+//We use the documentref to do all CRUD methods 
+//The collectionRef is used to just have data
+
 const config = {
     apiKey: "AIzaSyATlwz5ohcnvZXSx87fonY_IBpUZYL7RNU",
     authDomain: "crwn-db-c8828.firebaseapp.com",
@@ -14,7 +17,26 @@ const config = {
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if(!userAuth) return;
-    
+    //check if the connected user (with google) exist in the user collection or not
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
+    //a promise
+    const snapshot = await userRef.get();
+    //if not exist create it
+    if(!snapshot.exists){
+        const {displayName, email} = userAuth;
+        const createdAt = new Date();
+        try{
+            await userRef.set({
+                displayName,
+                email,
+                createdAt,
+                ...additionalData
+            })
+        }catch(error){
+            console.log('error creating user', error.message);
+        }
+    }
+    return userRef;
 }
 
 firebase.initializeApp(config);
