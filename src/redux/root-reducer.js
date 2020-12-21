@@ -1,4 +1,3 @@
-import { useReducer } from 'react';
 import { combineReducers } from 'redux';
 import cartReducer from './cart/cart.reducer';
 import userReducer from './user/user.reducer';
