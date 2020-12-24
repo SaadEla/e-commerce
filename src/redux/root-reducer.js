@@ -7,6 +7,7 @@ import directoryReducer from './directory/directory.reducer';
 import { persistReducer } from 'redux-persist';
 //for the local storage u can import also the session storage
 import storage from 'redux-persist/lib/storage';
+import shopReducer from './shop/shop.reducer';
 
 
 const persistConfig = {
@@ -15,11 +16,12 @@ const persistConfig = {
     storage,
     // array containing all the reducers that i want to store
     //(we didnt add user cause he is stored by firebase)
-    whitelist: ['cart', 'directory']
+    whitelist: ['cart']
 };
 const rootReducer = combineReducers({
     user: userReducer,
     cart: cartReducer,
-    directory: directoryReducer
+    directory: directoryReducer,
+    shop: shopReducer
 });
 export default persistReducer(persistConfig, rootReducer)
