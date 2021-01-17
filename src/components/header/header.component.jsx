@@ -9,7 +9,7 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCarHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selctor';
 import { createStructuredSelector } from 'reselect';
-import { HeaderContainer } from './header.styles';
+import { HeaderContainer, LogoContainer } from './header.styles';
 
 
 
