@@ -2,11 +2,15 @@ import styled, {css} from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
-export const OneOptionContainerStyle = css`
+const OneOptionContainerStyle = css`
     color: black;
     text-decoration: none;
     padding: 10px 15px;
     cursor: pointer;
+    &:hover{
+        color: black;
+        text-decoration: none;   
+    }
 `;
 
 export const OptionLink = styled(Link)`
