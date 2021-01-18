@@ -30,9 +30,10 @@ componentDidMount(){
           ...snapshot.data()
         });
       });
-    }else{
-      setCurrentUser(userAuth)
     }
+
+    setCurrentUser(userAuth)
+
   });
 }
 componentWillUnmount(){
