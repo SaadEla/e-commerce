@@ -1,11 +1,6 @@
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
-    entry: path.resolve(__dirname, 'src', 'index.js'),
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-      },
   module: {
     rules: [
       {
@@ -17,7 +12,7 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', {
-                "targets": "defaults" 
+                "targets": "defaults"
               }],
               '@babel/preset-react'
             ]
@@ -27,6 +22,6 @@ module.exports = {
     ]
   },
   plugins: [
-      new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin()
   ]
 }
